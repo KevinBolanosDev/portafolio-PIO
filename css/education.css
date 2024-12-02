@@ -1,0 +1,44 @@
+.icon_edu {
+    width: 2.5rem;
+}
+
+/* boton certificados */
+.button_edu {
+    background: rgba(151, 151, 151, 0.63);
+    color: #fff;
+    border: none;
+    padding: 2px 20px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    width: 170px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    text-decoration: none;
+    margin-right: 4rem;
+  }
+  
+  span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  .button_edu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: var(--third-color);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+    
+  .button_edu:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }

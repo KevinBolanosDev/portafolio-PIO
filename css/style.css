@@ -1,0 +1,319 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #020202;
+    --primary-color: #212529;
+
+    --secundary-color: #1B263B;
+    --third-color: #415A77;
+    --cuarto-color: #778DA9;
+    --quinto-color: #E0E1DD;
+}
+
+/* Sintaxis media queries
+@media (600px <= width <= 1200px) {
+      body {background-color: blue;
+    }
+  }
+*/
+
+body {
+    background-color: var(--body-color);
+    margin-bottom: 4rem;
+    color: #eee;
+    font-size: 15px;
+    min-height: 100vh;
+    background-image: repeating-linear-gradient(to right, transparent 0 33px, #eee1 33px 35px
+    ),
+    repeating-linear-gradient(
+      to bottom, transparent 0 33px, #eee1 33px 35px
+    );
+    /* overflow: hidden; */
+}
+
+/* 
+    NOTA:
+    rem: relativo al tamaño de fuente raiz (html)
+    em: relativo al tamaño de fuente del elemento padre
+    porcentajes(%): calcula el tamaño basado en el emento contenedor
+*/
+
+ul {
+  list-style-type: none;
+}
+
+.color_b {
+  background-color: var(--primary-color);
+}
+
+/* Header */
+/* .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.05);
+} */
+
+#photo {
+    width: 100%;
+    max-height: 45rem;
+    height: 100%;
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+  .photo_container {
+    /* position: absolute; */
+    overflow: hidden;
+    width: 35rem;
+    height: 100%;
+    border-radius: 50%;
+    /* border: solid 1px black; */
+
+    img {
+      position: absolute;
+      width: 100%;
+      /* overflow: hidden; */
+      position: relative;
+    }
+  }
+
+#description {
+    width: 100%;
+    height: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+#habilities {
+    width: 100%;
+    height: 100%;
+    /* max-height: 50rem; */
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    max-height: 28rem;
+    grid-column: 2/3;
+
+    img {
+      /* height: 25rem; */
+      overflow: hidden;
+      object-fit: cover;
+    }
+}
+
+#projects {
+    width: 100%;
+    height: 100%;
+    height: 30rem;
+    grid-column: 2/4;
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    /* height: 100%; */
+    /* position: relative; */
+    /* object-fit: cover; */
+}
+
+/* Proyectos */
+.projects {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* flex-flow: row; */
+  /* flex-wrap: wrap; */
+}
+
+.projects_container {
+  display: flex;
+  margin: 0 auto;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  width: 70%;
+  height: 200px;
+  gap: 10px;
+
+  img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: all ease-in-out 0.5s;
+
+  }
+}
+.projects_container img:hover {
+  width: 35%;
+}
+
+/*  Barra de habilidades */
+.skill-bars{
+  padding: 25px 30px;
+  width: 300px;
+  height: 90%;
+  color: #FFF;
+  background-color: var(--third-color);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.skill-bars .bar{
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: var(--cuarto-color);
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(0, 0, 0, 0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--primary-color);
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.html span{
+  width: 90%;
+}
+.bar .progress-line.css span{
+  width: 80%;
+}
+.bar .progress-line.javascript span{
+  width: 50%;
+}
+.bar .progress-line.react span{
+  width: 60%;
+}
+.bar .progress-line.nextjs span{
+  width: 55%;
+}
+.bar .progress-line.postgress span{
+  width: 50%;
+}
+.bar .progress-line.tailwindcss span{
+  width: 60%;
+}
+.bar .progress-line.bootstrap span{
+  width: 40%;
+}
+.progress-line span::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.html span::after{
+  content: "90%";
+}
+.progress-line.css span::after{
+  content: "80%";
+}
+.progress-line.javascript span::after{
+  content: "50%";
+}
+.progress-line.react span::after{
+  content: "60%";
+}
+.progress-line.nextjs span::after{
+  content: "55%";
+}
+.progress-line.postgress span::after{
+  content: "50%";
+}
+.progress-line.tailwindcss span::after{
+  content: "60%";
+}
+.progress-line.bootstrap span::after{
+  content: "40%";
+}
+
+
+/* Mostrar ancho de la pantalla y breakpoints */
+/* .size-display {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 1000;
+  font-family: monospace;
+}
+.breakpoint-info {
+  margin-top: 10px;
+  font-size: 0.9em;
+} */

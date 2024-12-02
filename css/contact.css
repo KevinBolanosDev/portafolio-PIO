@@ -1,0 +1,275 @@
+.content_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+  height: 100%;
+  height: 50rem;
+  align-items: center;
+  margin: 3rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.445);
+  border-radius: 10px;
+  border: var(--third-color) solid;
+}
+
+.title_contact {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font: 800 2.6rem/1 "Neuto", sans-serif;
+  display: block;
+  margin-top: -10rem;
+  text-shadow: 0 0 60px rgba(255, 255, 255, 0.747);
+  -webkit-text-fill-color: text;
+  color: transparent;
+  animation: fade 3s infinite;
+  animation-direction: alternate;
+}
+@keyframes fade {
+  0% {
+    background: #1b704dde;
+    background-clip: text;
+  }
+  50% {
+    background: #126288;
+    background-clip: text;
+  }
+  100% {
+    background: #80888dd2;
+    background-clip: text;
+  }
+}
+
+.subtitle_contact {
+  background: linear-gradient(to top, hsla(0, 0%, 0%, 0.856), hsl(0, 0%, 0%));
+  font-size: 3rem;
+  margin: 2rem ;
+  color: var(--title-color);
+  background-clip: text;
+  white-space: nowrap;
+  width: 24ch;
+  border-right: solid 6px;
+
+  animation: typing 4s steps(22), blink 0.5s infinite step-end alternate;
+  overflow: hidden;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-right: transparent;
+  }
+}
+
+/* Form */
+.login-box {
+    width: 48%;
+    height: 50rem;
+    padding: 20px;
+    margin-top: 3rem;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.445);
+    border-radius: 10px;
+    border: var(--third-color) solid;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: var(--title-color);
+    resize: none;
+  }
+  
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #bdb8b8;
+    font-size: 14px;
+  }
+
+  .login-box .user-box textarea:focus ~ label,
+  .login-box .user-box textarea:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #bdb8b8;
+    font-size: 14px;
+  }
+
+  /* Button form */
+
+  .button_cont {
+    background: rgba(151, 151, 151, 0.63);
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    width: 150px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    text-decoration: none;
+    width: 100%;
+  }
+  
+  span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  .button_cont::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: var(--third-color);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+    
+  .button_cont:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  /* Social contact */
+
+.wrapper {
+  position: absolute;
+  top: 75%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #415A77;
+  border-radius: 50%;
+  margin: 15px;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(150, 150, 150, 0.719);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  margin-left: -1rem;
+  font-size: 16px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -50px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #53585fc7;
+  color: #fff;
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #3daff7d8;
+  color: #fff;
+}
+
+.wrapper .gmail:hover,
+.wrapper .gmail:hover .tooltip,
+.wrapper .gmail:hover .tooltip::before {
+  background: #ca38539a;
+  color: #fff;
+}
+
+.wrapper .whatssap:hover,
+.wrapper .whatssap:hover .tooltip,
+.wrapper .whatssap:hover .tooltip::before {
+  background: #49cc158e;
+  color: #fff;
+}
