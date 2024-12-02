@@ -6,8 +6,8 @@
 } */
 
 // Actualizar al cargar y al cambiar el tamaño
-window.addEventListener('load', updateSize);
-window.addEventListener('resize', updateSize);
+/* window.addEventListener('load', updateSize);
+window.addEventListener('resize', updateSize); */
 
 // Cambios de colores al texto Bienvenidos
 const text = document.querySelector('.text_animations');
