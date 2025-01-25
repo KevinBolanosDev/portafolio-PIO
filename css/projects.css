@@ -1,23 +1,95 @@
 /* cards */
 
+
+/* Carousel */
+
+.carousel_container {
+  position: relative;
+  width: 100%;
+  height: 16em;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.carousel_wrapper {
+  display: flex;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-track-color: black;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+}
+
+.carousel_slide {
+  min-width: 30%;
+  box-sizing: border-box;
+}
+
+/* .card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+} */
+
+/* .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+} */
+
+/* .card-body {
+  padding: 10px;
+} */
+
+/* .prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* ------------------------- */
+
 .card {
     position: relative;
-    width: 250px;
+    width: 300px;
     height: 200px;
-    background-color: var(--secundary-color);
+    /* background-color: var(--secundary-color); */
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden; 
     perspective: 1000px;
-    box-shadow: 0 0 4px 5px var(--cuarto-color);
+    box-shadow: 0 5px 5px 5px rgba(255, 255, 255, 0.8);
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
   .card img {
     width: 48px;
-    fill: #333;
+    /* fill: #333; */
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
@@ -32,7 +104,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     background-color: var(--third-color);
     transform: rotateX(-90deg);
@@ -43,17 +115,30 @@
   .card:hover .card-body {
     transform: rotateX(0deg);
   }
+
+  .container-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border: solid 2px white;
+
+    a {
+      font-size: 1.3rem;
+      height: 3rem;
+    }
+  }
   
   .card-title {
     margin: 0;
-    font-size: 16px;
-    color: var(--primary-color);
+    font-size: 2.2rem;
     font-weight: 700;
   }
-
+  
   .card-title a {
+    color: #e4e4e4dc;
     text-decoration: none;
   }
+
   
   .card:hover svg {
     scale: 0;
@@ -61,8 +146,10 @@
   
   .card-text {
     margin: 10px 0 0;
+    height: ;
     font-size: 14px;
     color: #FFF;
     line-height: 1.4;
+    border: solid 2px red;
   }
   

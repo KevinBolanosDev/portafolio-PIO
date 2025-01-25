@@ -1,3 +1,8 @@
+#education {
+  height: 85vh;
+  margin-bottom: 2rem;
+}
+
 .icon_edu {
     width: 2.5rem;
 }
@@ -19,11 +24,6 @@
     margin-right: 4rem;
   }
   
-  span {
-    display: inline-block;
-    transform: skew(21deg);
-  }
-  
   .button_edu::before {
     content: '';
     position: absolute;
@@ -42,3 +42,17 @@
     right: 0;
     opacity: 1;
   }
+
+  .education {
+    height: 33em;
+  }
+
+  .courses {
+    height: 33em;
+    position: relative;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #324163 #000000c0;
+  }
+
+

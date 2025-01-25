@@ -1,0 +1,7 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 85vh;
+    margin-bottom: 2rem;
+}
