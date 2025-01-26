@@ -30,6 +30,6 @@ buttons.forEach(button => {
 });
 
 // Desactivamos el load de la pagina y evita que vuelva al index, nos ayuda mientras se encuentra en desarrollo
-const lastView = sessionStorage.getItem('currentView') || 'views/education.html';
+const lastView = sessionStorage.getItem('currentView') || 'views/projects.html';
 // Seleccionamos la vista predeterminada
 // loadView(lastView);
