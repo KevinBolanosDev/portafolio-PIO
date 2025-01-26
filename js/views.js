@@ -13,8 +13,11 @@ function loadView(view) {
       }
       return response.text();
     })
-    .then(html => {
+    .then(html => { 
       viewContainer.innerHTML = html; // Inserta el contenido de la vista en el contenedor
+      if (view.includes('about.html')) {
+        createGradientAnimation();
+      }
     })
     .catch(error => {
       viewContainer.innerHTML = `<h1>Error</h1><p>No se pudo cargar la vista: ${error.message}</p>`;
@@ -30,6 +33,6 @@ buttons.forEach(button => {
 });
 
 // Desactivamos el load de la pagina y evita que vuelva al index, nos ayuda mientras se encuentra en desarrollo
-const lastView = sessionStorage.getItem('currentView') || 'views/projects.html';
+const lastView = sessionStorage.getItem('currentView') || 'views/about.html';
 // Seleccionamos la vista predeterminada
 // loadView(lastView);

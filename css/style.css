@@ -56,7 +56,7 @@ a {
 .color_b {
   background-color: rgba(128, 128, 128, 0.178); /* Fondo blanco con transparencia */
   backdrop-filter: blur(1px); /* Mayor desenfoque */
-  border: 1px solid rgba(255, 255, 255, 0.582); /* Borde blanco con transparencia */
+  border: 2px solid; /* Borde blanco */
   box-shadow: 5px -5px 10px rgba(255, 255, 255, 0.226); /* Sombra para dar profundidad */
   border-radius: 8px; /* Bordes redondeados */
 }
