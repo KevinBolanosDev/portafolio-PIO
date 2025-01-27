@@ -16,10 +16,47 @@
 .about_p {
     display: flex;
     line-height: 2.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 87%;
     margin: 0 auto;
     text-align: justify;
+}
+
+.stack_container {
+    height: 30%;
+    width: 87%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+        
+    .stack_b {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 1rem 0 0;
+      width: 15%;
+      height: 40%;
+      background-color: rgba(190, 190, 190, 0.829);
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    .tailwindcss, .mongodb {
+      max-width: 4.5em;
+      max-height: 4.5em;
+    }
+
+    .javascript {
+      max-width: 3.3em;
+      max-height: 3.3em;
+    }
+
+    .html, .css, .git, .reactjs, .nodejs, .postgresql {
+      width: 3.5em;
+      height: 3.5em;
+      object-fit: cover;
+    }
 }
 
 /* Profile */
