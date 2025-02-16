@@ -1,8 +1,10 @@
+
 /* Carousel */
 #projects__container {
   height: 85vh;
   margin-bottom: 2rem;
 }
+
 .carousel_container {
   width: 100%;
   padding: 1rem 0 0 2.5rem;

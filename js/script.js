@@ -3,10 +3,6 @@ const text = document.querySelectorAll('.text_animations, .text_developer');
 
 function createGradientAnimation() {
   text.forEach(element => {
-    if (element.classList.contains('text_developer')) {
-      element.style.fontSize = '2rem';
-    } else
-    element.style.fontSize = '3rem';
     element.animate([
       { 
         background: '#2B64E0',
