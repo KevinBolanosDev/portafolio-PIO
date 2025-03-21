@@ -23,7 +23,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="stylesheet" href="css/education.css" />
     <link rel="stylesheet" href="css/contact.css" />
@@ -32,16 +32,15 @@
   </head>
   <body>
     <header class="header">
-      <a class="text_animations" href="index.html"
-        >&lt;Kevin Bolaños Dev/&gt;</a
-      >
+      <a class="text_animations" href="index.html">&lt;Kevin Bolaños Dev/&gt;</a>
       <input type="checkbox" id="mobile-menu" class="mobile-menu-check" />
       <label for="mobile-menu" class="hamburger-menu">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </label>
-      <nav class="nav justify-content-center">
+      <!-- Agregamos la clase nav-menu -->
+      <nav class="nav nav-menu justify-content-center">
         <div class="nav_menu">
           <button
             class="nav_btn global-button animate__animated animate__fadeInLeftBig"
@@ -120,7 +119,7 @@
               <button
                 class="global-button animate__animated animate__flash"
                 style="animation-delay: 4s"
-                id="button"
+                id="button_cv"
               >
                 Descargar CV
               </button>
@@ -236,13 +235,16 @@
             class="color_b animate__animated animate__fadeInUp"
             style="animation-delay: 1.4s"
           >
+          <div class="container_button_projects">
+            <p class="fs-1">Projects</p>
             <button
               data-view="views/projects.html"
-              class="nav_btn global-button animate__animated animate__flash"
+              class="global-button d-flex align-items-center justify-content-center animate__animated animate__flash"
               style="animation-delay: 4s"
-            >
-              All Projects
+              >
+              view more
             </button>
+        </div>
             <div class="projects_container">
               <img
                 src="images/projects/blog-preview-card.png"
@@ -270,7 +272,7 @@
     <footer id="contact" class="footer_container">
       <!-- Copyright -->
       <div class="text-center d-flex justify-content-center">
-        <p>Kevin Andrés Bolaños Narváez. &copy; All rights reserved 2025.</p>
+        <p>Kevin Andrés Bolaños Narváez. All rights reserved &copy; 2025.</p>
       </div>
     </footer>
     <!-- Scripts -->

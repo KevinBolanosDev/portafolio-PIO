@@ -37,8 +37,26 @@ function createGradientAnimation() {
     });
   });
 }
-
 // Llamar la función para iniciar la animación
 createGradientAnimation();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.projects_container');
+  let scrollAmount = 0;
+  const slideTimer = setInterval(() => {
+    container.scrollBy({
+      left: container.clientWidth,
+      behavior: 'smooth'
+    });
+    scrollAmount += container.clientWidth;
+    if (scrollAmount >= container.scrollWidth) {
+      scrollAmount = 0;
+      container.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, 3000); // Cambia de imagen cada 3 segundos
+});
 
 

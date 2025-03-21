@@ -55,11 +55,7 @@ a {
 }
 
 .color_b {
-  background-color: rgba(
-    128,
-    128,
-    128,
-    0.178
+  background-color: rgba(128, 128, 128, 0.178
   ); /* Fondo blanco con transparencia */
   backdrop-filter: blur(1px); /* Mayor desenfoque */
   border: 2px solid rgba(6, 67, 148, 0.534);
@@ -127,13 +123,19 @@ a {
   }
 
   .welcome_p {
-    width: 85%;
+    width: 100%;
   }
 
-  #button {
+  #button_cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5rem;
     position: absolute;
+    font-size: 1.5rem;
+    height: 1.7em;
     right: 1%;
-    top: 60%;
+    top: 75%;
   }
 
   .bg-decoration {
@@ -399,13 +401,19 @@ a {
   flex-direction: column;
   margin-bottom: 1rem;
 
-  button {
+  .container_button_projects {
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 3rem;
-    margin: 1rem auto;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: auto;
+
+      button {
+        margin: 1rem 5rem 0 0;
+        width: 8em;
+        height: 1.5em;
+        font-size: 1.5rem;
+      }
   }
 }
 
@@ -435,19 +443,16 @@ a {
   font-size: 2rem;
 }
 
-/* Media Queries */
-
-
-/* HEADER */
-/* Hamburguesa y menú móvil */
+/* Estilos del menú hamburguesa */
 .mobile-menu-check {
   display: none;
 }
 
 .hamburger-menu {
   display: none;
-  /* cursor: pointer; */
+  cursor: pointer;
   z-index: 1000;
+  padding: 10px;
 }
 
 .hamburger-bar {
@@ -456,9 +461,11 @@ a {
   height: 3px;
   margin: 5px auto;
   background: #b6b6b6;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
+/* MEDIA QUERIES */
+/* HEADER */ 
 @media (max-width: 768px) {
   .header {
     position: relative;
@@ -473,38 +480,39 @@ a {
     transform: translateY(-50%);
   }
   
-  .nav {
+  .nav-menu {
+    position: fixed;
+    top: 5.5rem;
+    left: -100%;
     width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    background: rgba(49, 87, 131, 0.9);
+    height: calc(100vh - -65em);
+    background-color: rgba(87, 87, 87, 0.26);
     backdrop-filter: blur(10px);
-    display: none;
+    transition: all 0.4s ease-in-out;
+    z-index: 999;
   }
   
-  .mobile-menu-check:checked ~ .nav {
-    display: block;
+  .mobile-menu-check:checked ~ .nav-menu {
+    left: 0;
   }
   
   .nav_menu {
+    display: flex;
     flex-direction: column;
-    padding: 1rem 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(27, 27, 27, 0.651);
+    padding: 5rem 0;
+    gap: 1rem;
   }
   
   .nav_btn {
-    width: 100%;
-    margin: 0.5rem 0;
+    width: 15em;
+    margin: 0.5rem auto;
     text-align: center;
-    animation: none !important;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    background: transparent;
   }
   
-  /* Animación hamburguesa a X */
+  /* Animación del botón hamburguesa */
   .mobile-menu-check:checked ~ .hamburger-menu .hamburger-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -517,114 +525,118 @@ a {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Layout */
-  .layout-grid {
-    grid-auto-rows: auto;
-    grid-template-columns: 1fr;
-  }
+/* LAYOUT */
+.layout-grid {
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
+}
+
+#photo,
+#description,
+#habilities,
+#image,
+#projects {
+  grid-column: 1;
+}
+
+#description {
+  max-height: none;
+  height: 16em;
+  grid-row: 1;
   
-  #photo,
-  #description,
-  #habilities,
-  #image,
-  #projects {
-    grid-column: 1;
+  .welcome_text {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
-  #description {
-    max-height: none;
-    height: 16em;
-    grid-row: 1;
-    
-    .welcome_text {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .welcome_p {
-      width: 95%;
-      margin: 0 auto;
-    }
-
-    #button {
-      position: relative;
-      left: 8%;
-      height: 3.5rem;
-      font-size: 1.5rem;
-      top: 10%;
-      width: 80%;
-      padding-bottom: 1rem;
-    }
-
-    .bg-decoration {
-      height: 15%;
-    }
-  }
-
-  #photo {
-    grid-row: 2;
-    height: 22em;
-  }
-  
-  .photo_container {
-    width: 24rem;
-  }
-
-  .text_typing {
-    margin-left: 3rem;
-    font-size: 1.6rem;
-  }
-
-  .text_developer {
-    font-size: 1.5rem;
-  }
-
-  #habilities {
-    grid-row: 3;
-    height: 25em;
-  }
-
-  #images {
-    /* display: block; */
-    /* grid-column: 1/1; */
-    grid-row: 5;
-  }
-
-  #projects {
-    grid-row: 4;
-    max-height: none;
-    height: 22em;
-    overflow: hidden;
-
-    button {
-      width: 80%;
-    }
-  }
-
-  .projects_container {
-    /* display: flex; */
-    overflow-x: auto; /* Permite desplazamiento horizontal */
-    scroll-snap-type: x mandatory; /* Efecto de carrusel */
-    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
-    width: 100%;
-    height: auto;
-    column-gap: 2rem;
-    padding: 1rem 1rem;
-    margin-left: 1.5rem;
-  }
-
-  .img_projects {
-    flex: 0 0 90%; /* Cada imagen ocupa el 90% del ancho del viewport */
-    height: auto;
-    scroll-snap-align: center; /* Centra cada imagen en el carrusel */
-    border-radius: 10px;
-    border: 2px solid rgba(36, 49, 124, 0.678);
-    transition: all ease-in-out 0.5s;
-  }
-
-  .footer_container {
-    font-size: 1.5rem;
-    width: 60%;
+  .welcome_p {
+    width: 95%;
     margin: 0 auto;
   }
+
+  #button {
+    position: relative;
+    left: 8%;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    top: 10%;
+    width: 80%;
+    padding-bottom: 1rem;
+  }
+
+  .bg-decoration {
+    height: 15%;
+  }
+}
+
+#photo {
+  grid-row: 2;
+  height: 22em;
+}
+
+.photo_container {
+  width: 24rem;
+}
+
+.text_typing {
+  margin-left: 3rem;
+  font-size: 1.6rem;
+}
+
+.text_developer {
+  font-size: 1.5rem;
+}
+
+#habilities {
+  grid-row: 3;
+  height: 25em;
+}
+
+#images {
+  /* display: block; */
+  /* grid-column: 1/1; */
+  grid-row: 5;
+}
+
+#projects {
+  grid-row: 4;
+  max-height: none;
+  height: 22em;
+  overflow: hidden;
+
+  button {
+    width: 100%;
+  }
+}
+
+.projects_container {
+  /* display: flex; */
+  overflow-x: auto; /* Permite desplazamiento horizontal */
+  scroll-snap-type: x mandatory; /* Efecto de carrusel */
+  -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
+  width: 90%;
+  height: auto;
+  column-gap: 2rem;
+  padding: 1rem;
+}
+
+.img_projects {
+  flex: 0 0 100%; /* Cada imagen ocupa el 90% del ancho del viewport */
+  height: auto;
+  scroll-snap-align: center; /* Centra cada imagen en el carrusel */
+  border-radius: 10px;
+  border: 2px solid rgba(36, 49, 124, 0.678);
+  transition: all ease-in-out 0.5s;
+}
+
+/* Ocultar scrollbar para un look más limpio */
+.projects_container::-webkit-scrollbar {
+  display: none;
+}
+
+.footer_container {
+  font-size: 1.5rem;
+  width: 55%;
+  margin: 0 auto;
+}
 }

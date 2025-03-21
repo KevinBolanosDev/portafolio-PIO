@@ -1,6 +1,6 @@
 #about {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     height: 85vh;
     padding-top: 2rem;
@@ -121,3 +121,116 @@
       border-right: transparent;
     }
   }
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .about_s {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .about_p {
+    width: 95%;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin: 1rem auto;
+  }
+
+  .stack_container {
+    width: 95%;
+    height: auto;
+    padding: 1rem 0;
+    gap: 0.5rem;
+    
+    .stack_b {
+      width: 25%;
+      height: 4rem;
+      margin: 0.5rem;
+    }
+
+    .tailwindcss, .mongodb {
+      max-width: 3em;
+      max-height: 3em;
+    }
+
+    .javascript {
+      max-width: 2.5em;
+      max-height: 2.5em;
+    }
+
+    .html, .css, .git, .reactjs, .nodejs, .postgresql {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
+
+  #photo_about {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .photo_container_a {
+    width: 20rem;
+    max-height: 25rem;
+    margin: 1rem 0;
+  }
+
+  .text_developer_a {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+
+  .text_typing_a {
+    font-size: 2rem;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    border-right: none;
+    animation: none;
+  }
+}
+
+/* Para pantallas más pequeñas */
+@media (375px <= width <= 768px) {
+  #about {
+  }
+
+  .stack_container .stack_b {
+    width: 30%;
+  }
+
+  .photo_container_a {
+    width: 18rem;
+  }
+
+  .text_developer_a {
+    font-size: 2rem;
+  }
+
+  .text_typing_a {
+    font-size: 1.6rem;
+  }
+
+  .about_s {
+    width: 100%;
+  }
+
+  .about_p {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    width: 100%;
+  }
+
+  #photo_about {
+    width: 100%;
+  }
+}
